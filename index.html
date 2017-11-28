@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>HangMan Attempt</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	<body>
+		<header>
+			<img src="assets/images/Hangman-vegas.jpg" alt="Hangman" class="center-block banner">
+			<h1 class="text-center">HANGMAN VIVA LAS VEGAS</h1>
+		</header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 center-block dashed-box">
+					<div class="row">
+						<div class="col-md-6 dashed-box">
+							<img src="assets/images/img-bellagio-fountains3.jpg" alt="Bellagio Fountains" class="center-block side-image">
+							<img src="assets/images/Hangover-pig.jpg" alt="Hangover" class="center-block side-image">
+						</div>
+						<div class="col-md-6 dashed-box text-center">
+							<p>Press any key to get started!</p>
+							<div class="number-wins">
+								<p>Number of Wins</p>
+							 	<span id="wins">0</span>
+							 </div>
+							<div id="Wordwrap">
+								<p class="text-center"> Current Word </p>
+								<!-- Lines Spacing in letters before guessing -->
+								<div id="hold"> 
+									_  _  _  _  _  _  _  _  _  _  _  _  _  _ (until i know how to js)
+								</div> 
+							</div>
+							<p class="text-center"> Number of Guesses Remaining</p>
+							<p class="text-center"> 15</p>
+							<div id="usedLetters-wrap" class="text-center">Letters Already Guessed
+								<div id="usedLetters">
+									p
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

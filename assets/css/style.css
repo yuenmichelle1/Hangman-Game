@@ -1,0 +1,39 @@
+body{
+	background-image: url(../images/darkness/darkness.png);
+	color:white;
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 20px;
+}
+* {
+	box-sizing: border-box;
+}
+.dashed-box{
+	border: 2px dashed white;
+}
+
+img{
+	width:40%;
+	max-width:980px;
+}
+
+.row img {
+	width: 80%;
+	height:80%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border: 1px solid beige;
+}
+.container{
+	margin-top: 40px;
+}
+
+p{
+	margin: 20px auto 40px auto;
+
+}
+#WordWrap{
+	margin: 30px auto 20px auto;
+}
+#hold{
+	margin: 10px;
+}
