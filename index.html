@@ -22,7 +22,9 @@
 							<img src="assets/images/Hangover-pig.jpg" alt="Hangover" class="center-block side-image">
 						</div>
 						<div class="col-md-6 dashed-box text-center">
+							<div id="game-start">
 							<p>Press any key to get started!</p>
+							</div>
 							<div class="number-wins">
 								<p>Number of Wins</p>
 							 	<span id="wins">0</span>
@@ -31,11 +33,11 @@
 								<p class="text-center"> Current Word </p>
 								<!-- Lines Spacing in letters before guessing -->
 								<div id="hold"> 
-									_  _  _  _  _  _  _  _  _  _  _  _  _  _ (until i know how to js)
+									
 								</div> 
 							</div>
 							<p class="text-center"> Number of Guesses Remaining</p>
-							<p class="text-center"> 15</p>
+							<p class="text-center" id="guesses-left"> </p>
 							<div id="usedLetters-wrap" class="text-center">Letters Already Guessed
 								<div id="usedLetters">
 									p
@@ -46,5 +48,6 @@
 				</div>
 			</div>
 		</div>
+		<script src="assets/javascript/game.js"></script>
 	</body>
 </html>
