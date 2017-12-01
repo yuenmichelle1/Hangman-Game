@@ -37,8 +37,12 @@ p{
 
 }
 #hold{
-	margin: 10px;
+	margin: 30px;
 	font-weight: 0;
 	font-size:30px;
 	overflow: auto;
+}
+
+#usedLetters {
+	margin-top: 20px;
 }
