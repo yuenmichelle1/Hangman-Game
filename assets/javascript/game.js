@@ -7,19 +7,59 @@ var randomWords= ["what happens in vegas stays in vegas", "bellagio", "mgm grand
 var computerPhrase= randomWords[Math.floor(Math.random()*randomWords.length)];
 //computerPhrase will show up in HTML
 var spaceFiller= ""; //either _ or a space, then filled with letter
+
+var guessesNumber= 14;
+var wrongGuesses = [];
+var winNumber= 0;
+
 for (var i=0; i<computerPhrase.length; i++) {
 	var letter= computerPhrase.charAt(i);
 	if (letter === " ") {
 		spaceFiller += " ";
 	} else {
-		spaceFiller += "-";
+	spaceFiller += "-";
+		}
+	}  //make it for ---s the first time everything else in reset 
+
+//defining my functions 
+//resets guess numbers, array of wrong guesses, redo -----,	
+function reset() {
+	guessesNumber= 14;
+	document.getElementById("guesses-left").innerHTML= guessesNumber; 
+	wrongGuesses =[];
+	document.getElementById("usedLetters").innerHTML= wrongGuesses;
+	computerPhrase = randomWords[Math.floor(Math.random()*randomWords.length)];
+	spaceFiller ="";
+	for (var j=0; j<computerPhrase.length; j++) {
+		var letter= computerPhrase.charAt(j);
+		if (letter === " ") {
+			spaceFiller += " ";
+		} else {
+			spaceFiller += "-";
+		}
+	} 
+	document.getElementById("hold").innerHTML=spaceFiller;
+}
+
+function alterAt ( n, c, originalString ) {
+	    return originalString.substr(0,n) + c + originalString.substr(n+1,originalString.length);
 	}
-} 
-var guessesNumber= 14;
-var wrongGuesses = [];
-var winNumber= 0;
+
+function guessLetter( yourletter, shown, answer ) {
+	  var checkIndex = 0;  
+	  checkIndex = answer.indexOf(yourletter);
+	  while ( checkIndex >= 0 ) {
+	     shown = alterAt( checkIndex, yourletter, shown );
+	     checkIndex = answer.indexOf(yourletter, checkIndex + 1);
+	    }
+	    return shown;
+	}
+
 
 document.onkeypress = function(keyPress) {
+	document.getElementById("hold").innerHTML = spaceFiller;
+	document.getElementById("guesses-left").innerHTML = guessesNumber;
+	document.getElementById("usedLetters").innerHTML = wrongGuesses;
 	if (spaceFiller === computerPhrase && guessesNumber > 0) {
 		winNumber= winNumber+1;
 		document.getElementById("wins").innerHTML=winNumber;
@@ -47,49 +87,19 @@ document.onkeypress = function(keyPress) {
 		if (spaceFiller === computerPhrase && guessesNumber > 0) {
 		winNumber= winNumber+1;
 		document.getElementById("wins").innerHTML=winNumber;
+		reset();
 		}
 		if (guessesNumber === 0) {
-				alert(`You lost!`);
+				alert(`You lost! Try again!`);
+				reset();
 		}
+
 
 	}
 
 
 	document.getElementById("wins").innerHTML = winNumber;
 
-	function alterAt ( n, c, originalString ) {
-	    return originalString.substr(0,n) + c + originalString.substr(n+1,originalString.length);
-	}
-
-	function guessLetter( letter, shown, answer ) {
-	    var checkIndex = 0;
-	    
-	    checkIndex = answer.indexOf(letter);
-	    while ( checkIndex >= 0 ) {
-	        shown = alterAt( checkIndex, letter, shown );
-	        checkIndex = answer.indexOf(letter, checkIndex + 1);
-	    }
-	    return shown;
-	}
-
-
-
-	//chosen answer will either have a space or if it is a letter will be filled with _
-	document.getElementById("hold").innerHTML = spaceFiller;
-
-
-	//if we guess the wrong letter then guessesNumber goes down
-
-
-
-
-	document.getElementById("guesses-left").innerHTML = guessesNumber;
-
-	//filler for reset when there is new word 
-
-
-	document.getElementById("usedLetters").innerHTML = wrongGuesses;
-	//filler for reset when there is new word
 
 }
 
