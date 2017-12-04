@@ -22,6 +22,8 @@ for (var i=0; i<computerPhrase.length; i++) {
 		}
 	}  //make it for ---s the first time everything else in reset 
 document.getElementById("hold").innerHTML =spaceFiller;
+document.getElementById("guesses-left").innerHTML = guessesNumber;
+document.getElementById("backgroundAudio").play();
 //defining my functions 
 //resets guess numbers, array of wrong guesses, redo -----,	
 function reset() {
@@ -88,11 +90,19 @@ document.onkeypress = function(keyPress) {
 		if (spaceFiller === computerPhrase && guessesNumber > 0) {
 		winNumber= winNumber+1;
 		document.getElementById("wins").innerHTML=winNumber;
+		alert(`You won! The answer was : ${computerPhrase.toUpperCase()}. Fun Vegas Fact: Tiesto performs and had a residency at MGM Grand! Check out his set sometime!`);
 		reset();
+		document.getElementById("backgroundAudio").pause();
+		document.getElementById("loseAudio").pause();
+		document.getElementById("winAudio").play();
+
 		}
 		if (guessesNumber === 0) {
-				alert(`You lost! Try again!`);
+				alert(`You lost! The answer was : ${computerPhrase.toUpperCase()}. Time for some Taylor! Try again!`);
 				reset();
+				document.getElementById("backgroundAudio").pause();
+				document.getElementById("winAudio").pause();
+				document.getElementById("loseAudio").play();
 		}
 	}
 	document.getElementById("wins").innerHTML = winNumber;
