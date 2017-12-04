@@ -1,5 +1,5 @@
 body{
-	background-image: url(../images/darkness/darkness.png);
+	background-image: url(darkness/darkness.png);
 	color:white;
 	font-family: 'Luckiest Guy', cursive;
 	font-size: 20px;
@@ -17,8 +17,8 @@ img{
 }
 
 .row img {
-	width: 69%;
-	height:69%;
+	width: 85%;
+	height:85%;
 	margin-top: 30px;
 	margin-bottom: 30px;
 	border: 1px solid beige;
@@ -46,7 +46,7 @@ p{
 #usedLetters {
 	margin-top: 20px;
 }
-#solid-box{
-	height: 100%;
-	border-bottom: 1px solid black;
+
+.dashed-left{
+	border-left: 2px dashed white;
 }
