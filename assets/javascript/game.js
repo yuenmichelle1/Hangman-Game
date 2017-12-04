@@ -2,6 +2,7 @@
 //	document.reset(); -> do not use yet. want: when key is pressed after win or loss, then game will reset 
 //}
 
+
 var randomWords= ["what happens in vegas stays in vegas", "bellagio", "mgm grand", "chippendales", "thunder down under", "mandalay bay", "excalibur", "luxor", "cosmopolitan", "high roller", "the mirage", "planet hollywood", "stratosphere", "circus circus", "siegfried and roy", "jabbawockeez", "penn and teller", "the strip", "fremont street experience", "treasure island", "caesars palace", "the venetian", "cirque du soleil", "palazzo"];
 //wordBank
 var computerPhrase= randomWords[Math.floor(Math.random()*randomWords.length)];
@@ -20,7 +21,7 @@ for (var i=0; i<computerPhrase.length; i++) {
 	spaceFiller += "-";
 		}
 	}  //make it for ---s the first time everything else in reset 
-
+document.getElementById("hold").innerHTML =spaceFiller;
 //defining my functions 
 //resets guess numbers, array of wrong guesses, redo -----,	
 function reset() {
@@ -56,7 +57,7 @@ function guessLetter( yourletter, shown, answer ) {
 	}
 
 
-document.onkeypress = function(keyPress) {
+document.onkeypress = function(keyPress) {	
 	document.getElementById("hold").innerHTML = spaceFiller;
 	document.getElementById("guesses-left").innerHTML = guessesNumber;
 	document.getElementById("usedLetters").innerHTML = wrongGuesses;
@@ -93,13 +94,9 @@ document.onkeypress = function(keyPress) {
 				alert(`You lost! Try again!`);
 				reset();
 		}
-
-
 	}
-
-
 	document.getElementById("wins").innerHTML = winNumber;
-
-
 }
+
+
 
